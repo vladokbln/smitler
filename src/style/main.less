@@ -1,0 +1,143 @@
+@import 'fonts.less';
+@import 'libs.less';
+@import 'vars.less';
+
+html { 
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+body {
+  font-family: @mainFonts;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+ul,li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}  
+p {
+  margin: 0;
+}  
+a {
+  text-decoration: none;
+  color: black;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}  
+textarea {
+  resize: none;
+}
+section {
+  position: relative;
+}
+input,
+select,
+button {
+  outline: none;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 25px;
+  right: -100px;
+  background-color: #e0e0e0;
+  z-index: 100;
+  border-radius: 50%;
+  color: #666;
+  font-size: 26px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  transition: all .3s ease;
+  opacity: .5;
+  &:hover {
+    color: #fff;
+    background-color: @accentColor;
+    opacity: 1;
+  }
+  &.active {
+    right: 25px;
+  }
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: @darkColor;
+}
+.pulse {
+  position: relative;
+  left: 50%;
+  top: 50vh;
+  margin-left: -40px;
+  margin-top: -40px;
+  &:before, &:after {
+    content: '';
+    border: 5px solid #323232;
+    width: 80px;
+    height: 80px;
+    border-radius: 500px;
+    position: absolute;
+  }
+  &:before {
+    animation: pulse-outer .8s ease-in infinite;
+  }
+  &:before {
+    animation: pulse-inner .8s linear infinite;
+  }
+}
+@keyframes pulse-outer {
+  0% {
+    .opacity(100);
+  }
+  50% {
+    .opacity (50);
+  }
+  100% {
+    .opacity (0);
+  }  
+}
+@keyframes pulse-inner {
+  0% {
+    .opacity(0);
+    transform: scale(0);
+  }
+  100% {
+    .opacity (100);
+    transform: scale(1);
+  }  
+}
+
+
+
+@import 'common.less';
+@import 'modules/header.less';
+@import 'sections/services.less';
+@import 'sections/king.less';
+@import 'sections/call.less';
+@import 'sections/review.less';
+@import 'sections/partners.less';
+@import 'modules/footer.less';
+@import 'media.less';
